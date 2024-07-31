@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foster RolePlay</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #000;
+            border-bottom: 2px solid #00f;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: white;
+        }
+        nav {
+            display: flex;
+        }
+        nav button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        nav button:hover {
+            background-color: #00f;
+        }
+        #content {
+            padding: 20px;
+            text-align: center;
+        }
+        #download-section {
+            display: none;
+            text-align: center;
+        }
+        #download-section button {
+            background-color: #00f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        #download-section button:hover {
+            background-color: #005bb5;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Foster RolePlay</h1>
+        <nav>
+            <button id="home-btn">Главная</button>
+            <button id="forum-btn">Форум</button>
+            <button id="download-btn">Скачать</button>
+        </nav>
+    </header>
+    <div id="content">
+        <div id="home-section">
+            <h2>Лучший CRMP проект «Foster RolePlay» - на ваш телефон</h2>
+            <p>Здесь вы сможете стать кем угодно. Стать главой криминальных организаций и держать в страхе всю область, встать на стражу закона и следить за порядком в области.</p>
+            <img src="https://i.postimg.cc/rpfS6p95/foster.webp" alt="Foster RolePlay Logo">
+        </div>
+        <div id="download-section">
+            <h2>Начни играть🔻</h2>
+            <button onclick="downloadFile()">Скачать</button>
+        </div>
+    </div>
+
+    <script>
+        const homeBtn = document.getElementById('home-btn');
+        const forumBtn = document.getElementById('forum-btn');
+        const downloadBtn = document.getElementById('download-btn');
+        const homeSection = document.getElementById('home-section');
+        const downloadSection = document.getElementById('download-section');
+
+        homeBtn.addEventListener('click', () => {
+            homeSection.style.display = 'block';
+            downloadSection.style.display = 'none';
+        });
+
+        forumBtn.addEventListener('click', () => {
+            window.location.href = 'https://foster-rp.vkweb.su/index.php';
+        });
+
+        downloadBtn.addEventListener('click', () => {
+            homeSection.style.display = 'none';
+            downloadSection.style.display = 'block';
+        });
+
+        function downloadFile() {
+            const link = document.createElement('a');
+            link.href = 'https://disk.yandex.ru/d/a0sL7inZZXw41Q'; // Замените 'URL_К_ВАШЕМУ_ФАЙЛУ' на действительную ссылку на файл
+            link.download = 'Лаунчер Foster RP'; // Замените 'название_файла' на нужное имя файла
+            link.click();
+        }
+    </script>
+</body>
+</html>
